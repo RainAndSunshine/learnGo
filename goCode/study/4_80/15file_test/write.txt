@@ -1,0 +1,4 @@
+Hello everyone!
+I want to learn Go well!
+Thanks!
+

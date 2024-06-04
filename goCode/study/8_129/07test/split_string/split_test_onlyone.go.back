@@ -1,0 +1,31 @@
+package split_string
+
+import (
+	"reflect"
+	"testing"
+)
+
+// TestSplit 单元测试,一次只能测试一组数据
+func TestSplit(t *testing.T) { //test的固定格式
+	got := Split("bbbaab", "b")            //程序得到的结果
+	want := []string{"", "", "", "aa", ""} //预期结果
+	if !reflect.DeepEqual(want, got) {     //切片不能直接比较
+		t.Errorf("want:%v, got:%v\n", want, got)
+	}
+}
+
+func Tes2tSplit(t *testing.T) {
+	got := Split("abcdef", "b")
+	want := []string{"a", "cdef"}
+	if !reflect.DeepEqual(want, got) {
+		t.Errorf("want:%v, got:%v\n", want, got)
+	}
+}
+
+func Test3Split(t *testing.T) {
+	got := Split("abcef", "bc")
+	want := []string{"a", "ef"}
+	if !reflect.DeepEqual(want, got) {
+		t.Fatalf("want:%v, got:%v\n", want, got)
+	}
+}
